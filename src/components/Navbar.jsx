@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full p-4 flex justify-center gap-6 z-50 backdrop-blur-md bg-black/30 text-white">
+    <nav className="fixed top-0 w-full p-4 flex justify-center gap-6 z-50 backdrop-blur-md bg-transparent text-white">
       <button onClick={() => handleScroll("hero")} className="hover:text-purple-400 transition">Home</button>
       <button onClick={() => handleScroll("about")} className="hover:text-purple-400 transition">About</button>
       <button onClick={() => handleScroll("projects")} className="hover:text-purple-400 transition">Projects</button>
