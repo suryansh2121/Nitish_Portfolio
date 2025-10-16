@@ -8,7 +8,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6">
+    <section id="projects" className="min-h-screen flex flex-col items-center justify-center px-6">
       <motion.h2
         className="text-4xl font-bold mb-10 text-neon"
         initial={{ opacity: 0, y: 50 }}

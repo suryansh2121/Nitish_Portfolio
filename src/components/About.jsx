@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+    <section id="about" className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
       <motion.h2
         className="text-4xl font-bold mb-6 text-neon"
         initial={{ opacity: 0, y: 50 }}

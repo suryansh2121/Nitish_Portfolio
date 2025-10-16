@@ -73,7 +73,7 @@ function CustomCursor() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
 
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 4] }}>
