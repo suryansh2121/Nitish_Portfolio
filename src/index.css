@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-pulse {
+  animation: blink 1s infinite;
+}
+
