@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 text-center ]"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-visible px-6 text-center bg-black "
     >
       {/* Floating Glow Orbs */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-purple-600/30 rounded-full blur-[100px]"></div>
@@ -38,12 +38,13 @@ export default function About() {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 1 }}
       >
-        I’m a <span className="text-purple-400 font-semibold">Software Engineer</span> passionate about building
-        beautiful, high-performance digital experiences. I love combining
-        <span className="text-pink-400"> creativity </span> and
-        <span className="text-cyan-400"> technology </span> to craft products that
-        inspire and engage users. Every line of code I write aims to blend logic
-        with art ✨.
+      I’m a{" "}
+<span className="text-purple-400 font-semibold">Graphic Designer & Video Editor</span>{" "}
+passionate about crafting impactful visual stories that connect with people. I love blending{" "}
+<span className="text-pink-400">creativity</span> and{" "}
+<span className="text-cyan-400">strategy</span> to build strong{" "}
+<span className="text-yellow-400">brands</span> and deliver designs that inspire and engage. Every frame I design and every cut I make aims to tell a{" "}
+<span className="text-blue-400">meaningful story</span>.
       </motion.p>
 
       <motion.div

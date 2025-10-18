@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Sphere, Stars, Environment } from "@react-three/drei";
+import { OrbitControls, Sphere, Environment } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef, useEffect } from "react";
@@ -15,11 +15,7 @@ function FloatingSphere({ position, color, speed }) {
 
   return (
     <Sphere ref={ref} args={[0.3, 32, 32]} position={position}>
-      <meshStandardMaterial
-        emissive={color}
-        color={color}
-        emissiveIntensity={2}
-      />
+      <meshStandardMaterial emissive={color} color={color} emissiveIntensity={2} />
     </Sphere>
   );
 }
@@ -75,53 +71,47 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black text-white !mb-0"
     >
+      {/* 3D Canvas Background */}
       <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 4] }}>
+        <Canvas className="!absolute !inset-0" camera={{ position: [0, 0, 4] }}>
           <ambientLight intensity={0.4} />
           <pointLight position={[10, 10, 10]} intensity={1.5} />
           <FloatingSphere position={[1, 1, 0]} color="#8b5cf6" speed={1.5} />
-          <FloatingSphere
-            position={[-1.5, -0.5, 0]}
-            color="#ec4899"
-            speed={2}
-          />
+          <FloatingSphere position={[-1.5, -0.5, 0]} color="#ec4899" speed={2} />
           <FloatingSphere position={[0, -1, -1]} color="#22d3ee" speed={1.8} />
-
           <Environment preset="city" />
           <EffectComposer>
-            <Bloom
-              luminanceThreshold={0.3}
-              luminanceSmoothing={0.9}
-              height={300}
-            />
+            <Bloom luminanceThreshold={0.3} luminanceSmoothing={0.9} height={300} />
           </EffectComposer>
-
           <OrbitControls enableZoom={false} enablePan={false} />
         </Canvas>
       </div>
 
       {/* Overlay Content */}
       <motion.div
-        className="z-10 px-10 text-left top-1/2 transform -translate-y-1/2  mb-25 max-w-3xl"
+        className="z-10 px-6 sm:px-10 text-left mx-auto mt-32 sm:mt-0 max-w-3xl"
         initial={{ opacity: 0, x: -80, y: -20 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        <motion.h1 className="text-7xl text-left font-extrabold mb-4 bg-clip-text drop-shadow-glow">
+        <motion.h1
+          className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 to-cyan-400 drop-shadow-lg"
+        >
           Nitish Kumar
         </motion.h1>
       </motion.div>
+
       <motion.p
-        className="text-lg text-center text-gray-300 z-1"
+        className="text-base sm:text-lg md:text-2xl text-center text-gray-300 mt-4 z-10"
         initial={{ opacity: 0, y: 60, x: 40 }}
         animate={{ opacity: 1, y: 0, x: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
       >
         <Typewriter
           words={[
-            " Graphic Designer",
+            "Graphic Designer",
             "Video Editor",
             "Motion Designer",
             "Animator",
@@ -129,9 +119,12 @@ export default function Hero() {
           typingSpeed={100}
           deletingSpeed={60}
           delayBetweenWords={1200}
-          className="text-2xl text-teal-400"
+          className="text-teal-400"
         />
       </motion.p>
+
+      {/* Extra scroll space for mobile */}
+      <div className="h-[20vh] sm:h-[25vh] md:h-[15vh]" />
 
       <CustomCursor />
     </section>
