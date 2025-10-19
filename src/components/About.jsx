@@ -79,7 +79,7 @@ export default function About() {
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 bg-black text-white gap-10">
+    <section id="about" className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 bg-black text-white gap-10">
       {/* Left: About Content */}
       <div className="flex-1 text-center lg:text-left">
         <motion.h2
